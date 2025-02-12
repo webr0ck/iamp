@@ -36,6 +36,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/systems', to: 'systems#index'
       get '/roles/:id', to: 'roles#show'
+      get '/roles/:id/accesses', to: 'roles#get_users'
+      get '/roles/:id/sync', to: 'roles#role_sync'
       post '/roles', to: 'roles#create'
       patch '/roles/:id', to: 'roles#update'
       delete '/roles/:id', to: 'roles#destroy'
